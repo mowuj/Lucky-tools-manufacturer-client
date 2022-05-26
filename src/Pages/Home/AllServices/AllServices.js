@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AllServices = ({ service }) => {
+const AllServices = ({ service,setTreatment }) => {
     
     const { name,img,price,Minimum_quantity,quantity } = service;
     return (
@@ -15,8 +15,14 @@ const AllServices = ({ service }) => {
         <td>{ price }</td>
         <td>{ Minimum_quantity }</td>
         <td>{ quantity }</td>
-        
-        <td><button class="btn btn-xs">purchase</button></td>
+        <td><div className="card-actions justify-center">
+            
+            <label htmlFor="booking-modal"
+              
+              onClick={()=>setTreatment(service)}
+              className="btn btn-sm btn-secondary text-white uppercase bg-gradient-to-r from-secondary to-primary">Purchase</label>
+    </div></td>
+        {/* <td><button class="btn btn-xs">purchase</button></td> */}
       </tr>
     );
 };

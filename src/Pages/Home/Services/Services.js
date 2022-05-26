@@ -3,16 +3,26 @@ import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import useTools from '../../../hooks/useTools';
 import AllServices from '../AllServices/AllServices';
+import BookingModal from '../BookingModal/BookingModal';
 import Service from '../Service/Service';
 
 const Services = () => {
-    const [services, setServices] = useTools();
+  const [services, setServices] = useTools();
+  const [tool, setTool] = useState(null)
+  const [treatment, setTreatment] = useState(null)
     return (
 
-        <div>
+      <div>
+        {
+                    services.map(service => <BookingModal
+                    key={service._id}
+                      service={service}
+                      setTreatment={setTreatment}
+                    ></BookingModal>)
+                } 
             <h4 className='text-xl text-secondary text-center my-4'>Our Services </h4>
             <h2 className='text-2xl text-center'>All Products:{ services.length}</h2>
-            <div class="overflow-x-auto">
+    <div class="overflow-x-auto">
   <table class="table w-full">
     
     <thead>
