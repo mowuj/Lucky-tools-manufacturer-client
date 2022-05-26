@@ -7,12 +7,8 @@ import Service from '../Service/Service';
 
 const Services = () => {
     const [services, setServices] = useTools();
-    
-   
-    
     return (
-       
-        
+
         <div>
             <h4 className='text-xl text-secondary text-center my-4'>Our Services </h4>
             <h2 className='text-2xl text-center'>All Products:{ services.length}</h2>

@@ -15,8 +15,7 @@ const AllServices = ({ service }) => {
         <td>{ price }</td>
         <td>{ Minimum_quantity }</td>
         <td>{ quantity }</td>
-        {/* <td>{role!=='admin'&& <button onClick={makeAdmin} class="btn btn-xs" >Make Admin</button>}</td>
-         */}
+        
         <td><button class="btn btn-xs">purchase</button></td>
       </tr>
     );
