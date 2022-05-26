@@ -1,12 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const menuItems = <>
-        <li><a>Home</a></li>
-        <li><a>Blogs</a></li>
+        <li><Link to='/'>Home</Link></li>
+        <li><Link to='/blog'>Blogs</Link></li>
         <li><a>contact</a></li>
         <li><a>service</a></li>
-        <li><a>Login</a></li>
+        <li><Link to='/login'>Login</Link></li>
+        <li><Link to='/signup'>Login</Link></li>
     </>
     return (
         <div className="navbar bg-base-100">
