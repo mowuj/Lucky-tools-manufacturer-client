@@ -8,16 +8,15 @@ import Service from '../Service/Service';
 
 const Services = () => {
   const [services, setServices] = useTools();
-  const [tool, setTool] = useState(null)
-  const [treatment, setTreatment] = useState(null)
+  const [tool, setTool] = useState(null);
+  console.log(tool);
     return (
-
       <div>
         {
                     services.map(service => <BookingModal
                     key={service._id}
                       service={service}
-                      setTreatment={setTreatment}
+                      setTreatment={setTool}
                     ></BookingModal>)
                 } 
             <h4 className='text-xl text-secondary text-center my-4'>Our Services </h4>
