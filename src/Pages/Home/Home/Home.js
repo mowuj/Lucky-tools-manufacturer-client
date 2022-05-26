@@ -18,22 +18,17 @@ const Home = () => {
         <div>
             
             <Carousel></Carousel>
-            <div id='inventory' className='container'>
-            <div className="row">
-                <h1 className='text-primary text-center mt-5'>Inventories</h1>
-            <div className='inventory-container'>
-                    {
-                        services.slice(0, 6).map(service => <Service
+            <h4 className='text-xl text-secondary text-center my-12'>Our Services </h4>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ml-12'>
+                 {
+                        services.slice(0, 3).map(service => <Service
                             service={service}
                         ></Service>)
-                        }
-                        <button onClick={handeNavigate} className='btn-info ms-auto p-2'>Go to Inventory</button>
-
-                </div>
-                
+                }
+                <button onClick={handeNavigate} class="btn btn-xs flex justify-center items-center sm:btn-sm md:btn-md lg:btn-lg">See All Service</button>
+                        
             </div>
-            
-        </div>
+           
             <Summary></Summary>
             
         </div>

@@ -8,15 +8,17 @@ const Service = ({service}) => {
         navigate(`/service/${id}`)
     }
     return (
-        <div className='inventory'>
-            <img className='inventory-img' src={img} alt="" />
-            <h2>{name}</h2>
-            <p>Price:{price}</p>
-            <p>Quantity:{quantity}</p>
-            <p>Supplier:{supplier}</p>
-            <p><small>{ description}</small> </p>
-            <button onClick={()=>navigateToUpdate(_id)} className='btn-primary'>Update</button>
-        </div>
+            <div class="card w-96 bg-base-100 shadow-xl">
+  <figure><img src={img} alt="Shoes" /></figure>
+  <div class="card-body">
+                <h2 class="card-title">{name}</h2>
+    <p>Quantity:{quantity}</p>
+    <div class="card-actions justify-end">
+      <button class="btn btn-primary">Buy Now</button>
+    </div>
+  </div>
+</div>
+
     );
 };
 
