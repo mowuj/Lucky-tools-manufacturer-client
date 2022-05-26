@@ -4,7 +4,10 @@ import { Route, Routes } from 'react-router-dom';
 import Login from './Pages/Auth/Login/Login';
 import RequireAuth from './Pages/Auth/RequireAuth/RequireAuth';
 import SignUp from './Pages/Auth/SignUp/SignUp';
+import AddReview from './Pages/Dashboard/AddReview/AddReview';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import MyOrder from './Pages/Dashboard/MyOrder/MyOrder';
+import MyProfile from './Pages/Dashboard/MyProfile/MyProfile';
 import Blogs from './Pages/Home/Blogs/Blogs';
 import Home from './Pages/Home/Home/Home';
 import Service from './Pages/Home/Service/Service';
@@ -24,7 +27,9 @@ function App() {
         <Route path='/dashboard' element={<RequireAuth>
           <Dashboard></Dashboard>
         </RequireAuth>}>
-          
+          <Route index element={<MyOrder></MyOrder>}></Route>
+          <Route path="review" element={<AddReview></AddReview>}></Route>
+          <Route path="history" element={<MyProfile></MyProfile>}></Route>
         </Route>
         <Route path='/blogs' element={<RequireAuth>
           <Blogs></Blogs>
