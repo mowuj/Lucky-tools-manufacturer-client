@@ -11,12 +11,12 @@ const Navbar = () => {
         localStorage.removeItem('accessToken');
     }
     const menuItems = <>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/blogs'>Blogs</Link></li>
-        <li><Link to='user'>Users</Link></li>
-        <li><Link to='service'>service</Link></li>
-        <li><Link to='/login'>Login</Link></li>
-      <li><Link to='/signup'>Sign Up</Link></li>
+      <li><Link to='/'>Home</Link></li>
+      <li><Link to='service'>service</Link></li>
+      <li><Link to='dashboard'>Dashboard</Link></li>
+      <li><Link to='/blogs'>Blogs</Link></li>
+        {/* <li><Link to='/login'>Login</Link></li> */}
+      
       <li>{user?<button className="btn btn-ghost" onClick={logout}>Sign Out</button>:<Link to='/login'>Login</Link> }</li>
     </>
     return (

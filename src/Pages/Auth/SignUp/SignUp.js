@@ -25,9 +25,9 @@ const SignUp = () => {
     if (error || gError||updateError) {
         signInError = <p className='text-red-500'><small>{ error?.message||gError?.message||updateError?.message}</small></p>
     }
-    if (token) {
+    if (user||gUser) {
         
-        navigate('/blogs')
+        navigate('/')
     }
     const onSubmit =async data => {
         
