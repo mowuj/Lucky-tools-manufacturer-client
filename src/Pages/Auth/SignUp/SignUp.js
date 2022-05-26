@@ -26,7 +26,7 @@ const SignUp = () => {
     }
     if (user) {
         
-        navigate('/')
+        navigate('/blogs')
     }
     const onSubmit =async data => {
         
