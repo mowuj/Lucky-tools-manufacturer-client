@@ -8,6 +8,7 @@ const Home = () => {
             
             <Carousel></Carousel>
             <Summary></Summary>
+            
         </div>
     );
 };
