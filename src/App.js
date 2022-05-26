@@ -10,6 +10,7 @@ import MyOrder from './Pages/Dashboard/MyOrder/MyOrder';
 import MyProfile from './Pages/Dashboard/MyProfile/MyProfile';
 import Blogs from './Pages/Home/Blogs/Blogs';
 import Home from './Pages/Home/Home/Home';
+import Portfolio from './Pages/Home/Portfolio/Portfolio';
 import Service from './Pages/Home/Service/Service';
 import Services from './Pages/Home/Services/Services';
 import Footer from './Pages/Shared/Footer/Footer';
@@ -24,6 +25,7 @@ function App() {
       <Routes>
         <Route path='/' element= {<Home></Home>}></Route>
         <Route path='/service' element= {<Services></Services>}></Route>
+        <Route path='/portfolio' element= {<Portfolio></Portfolio>}></Route>
         <Route path='/dashboard' element={<RequireAuth>
           <Dashboard></Dashboard>
         </RequireAuth>}>
