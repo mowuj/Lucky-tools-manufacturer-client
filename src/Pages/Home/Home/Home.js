@@ -12,7 +12,7 @@ const Home = () => {
         navigate(`/inventory/${id}`)
     }
     const handeNavigate= () => {
-        navigate('/inventory')
+        navigate('/service')
     }
     return (
         <div>

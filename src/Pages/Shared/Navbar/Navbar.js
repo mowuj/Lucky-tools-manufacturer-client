@@ -13,7 +13,7 @@ const Navbar = () => {
     const menuItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/blogs'>Blogs</Link></li>
-        <li><a>contact</a></li>
+        <li><Link to='user'>Users</Link></li>
         <li><Link to='service'>service</Link></li>
         <li><Link to='/login'>Login</Link></li>
       <li><Link to='/signup'>Sign Up</Link></li>
