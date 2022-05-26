@@ -1,42 +1,38 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
 import auth from '../../../firebase.init';
 
-const MyOrder = () => {
+const MyBooking = () => {
     const [tools, setTools] = useState([]);
     const [user] = useAuthState(auth);
-    console.log(user.email);
-    console.log(tools);
+
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/booking?customer=${user.email}`)
+            fetch(`http://localhost:5000/booking?patient=${user.email}`)
                 .then(res => res.json())
                 .then(data => setTools(data));
         }
     }, [user])
     return (
         <div>
-            <h2>My Order: {tools.length}</h2>
+            <h2>My Appointments: {tools.length}</h2>
             <div class="overflow-x-auto">
                 <table class="table w-full">
                     <thead>
                         <tr>
                             <th></th>
                             <th>Name</th>
-                            <th>Email</th>
-                            <th>Price</th>
-                            <th>Action</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Treatment</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
                             tools.map((a, index) =><tr>
                                 <th>{index + 1}</th>
-                                <td>{a.customerName}</td>
-                                <td>{a.customer}</td>
+                                <td>{a.name}</td>
                                 <td>{a.price}</td>
-                                <td><Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs btn-success'>Payment</button></Link> <button className='btn btn-xs red-500'>Cancel</button></td>
                                 
                             </tr>)
                         }
@@ -49,4 +45,4 @@ const MyOrder = () => {
     );
 };
 
-export default MyOrder;
+export default MyBooking;
