@@ -8,7 +8,7 @@ const MyBooking = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/booking?patient=${user.email}`)
+            fetch(`https://agile-citadel-75234.herokuapp.com/booking?customer=${user.email}`)
                 .then(res => res.json())
                 .then(data => setTools(data));
         }
