@@ -30,6 +30,8 @@ const MyOrder = () => {
                             <th></th>
                             <th>Name</th>
                             <th>Email</th>
+                            <th>Tools</th>
+                            <th>Orders</th>
                             <th>Price</th>
                             <th>Action</th>
                         </tr>
@@ -40,6 +42,8 @@ const MyOrder = () => {
                                 <th>{index + 1}</th>
                                 <td>{a.customerName}</td>
                                 <td>{a.customer}</td>
+                                <td>{a.service}</td>
+                                <td>{a.price}</td>
                                 <td>{a.price}</td>
                                 <td><Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs btn-success'>Payment</button></Link> <button className='btn btn-xs red-500'>Cancel</button></td>
                                 
