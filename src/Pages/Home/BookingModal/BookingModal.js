@@ -24,7 +24,7 @@ const BookingModal = ({ service ,setTool}) => {
             customerName: user.displayName,
             phone:event.target.phone.value
         }
-        fetch('https://agile-citadel-75234.herokuapp.com//booking', {
+        fetch('https://agile-citadel-75234.herokuapp.com/booking', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

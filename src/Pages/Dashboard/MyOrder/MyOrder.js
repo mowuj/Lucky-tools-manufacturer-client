@@ -10,7 +10,12 @@ const MyOrder = () => {
     console.log(tools);
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/booking?customer=${user.email}`)
+            fetch(`http://localhost:5000/booking?customer=${user.email}`, {
+                method: 'GET',
+            headers: {
+              'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            }
+            })
                 .then(res => res.json())
                 .then(data => setTools(data));
         }

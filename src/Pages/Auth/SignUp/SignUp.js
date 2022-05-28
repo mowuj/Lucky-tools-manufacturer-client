@@ -4,9 +4,9 @@ import auth from '../../../firebase.init';
 import { useForm } from "react-hook-form";
 import Loading from '../../Shared/Loading/Loading';
 import { Link, useNavigate } from 'react-router-dom';
-import useToken from '../../../hooks/useToken';
 // import useToken from '../../../hooks/UseToken';
-const SignUp = () => {
+import useToken from '../../../hooks/useToken'
+const Signup = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [
@@ -134,4 +134,4 @@ const SignUp = () => {
     );
 };
 
-export default SignUp;
+export default Signup;

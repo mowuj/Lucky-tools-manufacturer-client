@@ -9,7 +9,7 @@ import Service from '../Service/Service';
 const Services = () => {
   const [services, setServices] = useTools();
   const [tool, setTool] = useState(null);
-  console.log(tool);
+  
     return (
       <div>
         {
