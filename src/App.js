@@ -1,7 +1,9 @@
 
 import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 
 import Login from './Pages/Auth/Login/Login';
+import RequireAdmin from './Pages/Auth/RequireAdmin/RequireAdmin';
 import RequireAuth from './Pages/Auth/RequireAuth/RequireAuth';
 import SignUp from './Pages/Auth/SignUp/SignUp';
 import AddReview from './Pages/Dashboard/AddReview/AddReview';
@@ -15,7 +17,6 @@ import Users from './Pages/Dashboard/Users/Users';
 import Blogs from './Pages/Home/Blogs/Blogs';
 import Home from './Pages/Home/Home/Home';
 import Portfolio from './Pages/Home/Portfolio/Portfolio';
-import Service from './Pages/Home/Service/Service';
 import Services from './Pages/Home/Services/Services';
 import Footer from './Pages/Shared/Footer/Footer';
 
@@ -38,7 +39,7 @@ function App() {
           <Route path="review" element={<AddReview></AddReview>}></Route>
           <Route path="history" element={<MyProfile></MyProfile>}></Route>
           <Route path="payment/:id" element={<Payment></Payment>}></Route>
-          <Route path="users" element={<Users></Users>}></Route>
+          <Route path="users" element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
           <Route path="addTools" element={<AddTools></AddTools>}></Route>
           <Route path="manage" element={<ManageProduct></ManageProduct>}></Route>
         </Route>
@@ -50,7 +51,7 @@ function App() {
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
-      
+      <ToastContainer />
     </div>
   );
 }

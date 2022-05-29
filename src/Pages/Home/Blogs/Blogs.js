@@ -54,7 +54,15 @@ const Blogs = () => {
 When you directly update the state, it does not change this.state immediately. Instead, it creates a pending state transition, and accessing it after calling this method will only return the present value.
 You will lose control of the state across all components</p>
             </div>
-           </div>
+            </div>
+            <div className='mx-8'>
+          <h2 className='text-xl'>How will you improve the performance of a React Application?</h2>
+          <p>Keeping component state local where necessary
+Memoizing React components to prevent unnecessary re-renders
+Code-splitting in React using dynamic import()
+Windowing or list virtualization in React
+Lazy loading images in React</p>
+        </div>
         </div>
     );
 };
