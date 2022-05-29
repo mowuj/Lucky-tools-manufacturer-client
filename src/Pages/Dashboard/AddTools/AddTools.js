@@ -14,7 +14,7 @@ const AddTools = () => {
    * YUP:to validate file:Search:YUP file validation for react hook form
    */
     const { register, formState: { errors }, handleSubmit,reset } = useForm();
-    const {data:services,isLoading}=useQuery('services',()=>fetch('http://localhost:5000/service').then(res=>res.json()))
+    const {data:services,isLoading}=useQuery('services',()=>fetch('https://agile-citadel-75234.herokuapp.com/service').then(res=>res.json()))
 
   const imageStorageKey = '57d910e362621157f7a4fff266d13647';
 
@@ -40,7 +40,7 @@ const AddTools = () => {
               img:img
             }
             //send to your database
-            fetch('http://localhost:5000/service', {
+            fetch('https://agile-citadel-75234.herokuapp.com/service', {
               method: 'POST',
               headers: {
                 'content-type': 'application/json',
@@ -190,7 +190,7 @@ const AddTools = () => {
     <span className="label-text">Specialty</span>
     
                     </label>
-                    <select{...register('specialty')} class="select input-bordered w-full max-w-xs">
+                    <select{...register('specialty')} className="select input-bordered w-full max-w-xs">
                         {
                             services.map(service => <option
                                 key={service._id}

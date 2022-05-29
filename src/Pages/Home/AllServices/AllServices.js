@@ -6,8 +6,8 @@ const AllServices = ({ service,setTool}) => {
     return (
         <tr>
         <th>1</th>
-        <td><div class="avatar">
-  <div class="w-8 rounded">
+        <td><div className="avatar">
+  <div className="w-8 rounded">
     <img src={img} alt={name} />
   </div>
 </div></td>
@@ -22,7 +22,7 @@ const AllServices = ({ service,setTool}) => {
               onClick={()=>setTool(service)}
               className="btn btn-sm btn-secondary text-white uppercase bg-gradient-to-r from-secondary to-primary">Purchase</label>
     </div></td>
-        {/* <td><button class="btn btn-xs">purchase</button></td> */}
+        {/* <td><button className="btn btn-xs">purchase</button></td> */}
       </tr>
     );
 };

@@ -10,7 +10,7 @@ const MyOrder = () => {
     // console.log(tools);
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/booking?customer=${user.email}`, {
+            fetch(`https://agile-citadel-75234.herokuapp.com/booking?customer=${user.email}`, {
                 method: 'GET',
             headers: {
               'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -23,8 +23,8 @@ const MyOrder = () => {
     return (
         <div>
             <h2>My Order: {tools.length}</h2>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th></th>

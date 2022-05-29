@@ -7,7 +7,7 @@ const ManageProduct = () => {
     const handleDelete = id => {
         const proceed =window.confirm('Are You sure?')
         if (proceed) {
-            const url =`http://localhost:5000/service/${id}`
+            const url =`https://agile-citadel-75234.herokuapp.com/service/${id}`
 
             fetch(url, {
                 method:'DELETE'
@@ -19,8 +19,8 @@ const ManageProduct = () => {
         }
     }
     return (
-        <div class="overflow-x-auto">
-  <table class="table w-full">
+        <div className="overflow-x-auto">
+  <table className="table w-full">
     
     <thead>
       <tr>
@@ -38,8 +38,8 @@ const ManageProduct = () => {
                     products.map(product => 
                     <tr>
         <th>*</th>
-        <td><div class="avatar">
-  <div class="w-8 rounded">
+        <td><div className="avatar">
+  <div className="w-8 rounded">
     <img src={product.img} alt={product.name} />
   </div>
 </div></td>

@@ -29,11 +29,14 @@ const Home = () => {
                             service={service}
                         ></Service>)
                 }
-                <button onClick={handeNavigate} class="btn btn-xs flex justify-center items-center sm:btn-sm md:btn-md lg:btn-lg">See All Service</button>
+                <button onClick={handeNavigate} className="btn btn-xs flex justify-center items-center sm:btn-sm md:btn-md lg:btn-lg">See All Service</button>
                         
             </div>
            
-            <Summary></Summary>
+            <div>
+                <h2 className='text-3xl text-secondary text-center'>Our Business Summary</h2>
+                <Summary></Summary>
+            </div>
             <NewProduct></NewProduct>
             <div >
                 <h2 className='text-3xl text-secondary text-center'>Most sell Product of the Month</h2>

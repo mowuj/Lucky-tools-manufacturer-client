@@ -12,7 +12,7 @@ const CheckoutForm = ({data}) => {
   const [clientSecret, setClientSecret] = useState('');
   const {price,name,service,customer,customerName,_id } = data;
   useEffect(() => {
-    fetch('http://localhost:5000/create-payment-intent', {
+    fetch('https://agile-citadel-75234.herokuapp.com/create-payment-intent', {
       method: 'POST',
       headers: {
         'content-type':'application/json',
@@ -73,7 +73,7 @@ const CheckoutForm = ({data}) => {
           appointment: _id,
           transactionId:paymentIntent.id
         }
-        fetch(`http://localhost:5000/booking/${_id}`, {
+        fetch(`https://agile-citadel-75234.herokuapp.com/booking/${_id}`, {
           method: 'PATCH',
           headers: {
         'content-type':'application/json',
@@ -106,7 +106,7 @@ const CheckoutForm = ({data}) => {
           },
         }}
       />
-      <button className='btn btn-success btn-sm mt-4' type="submit" disabled={!stripe||!clientSecret||success}>
+      <button className='btn btn-success btn-sm mt-4' type="submit" disabled={!stripe}>
         Pay
       </button>
             </form>
