@@ -6,8 +6,8 @@ import auth from '../../../firebase.init';
 const MyOrder = () => {
     const [tools, setTools] = useState([]);
     const [user] = useAuthState(auth);
-    console.log(user.email);
-    console.log(tools);
+    // console.log(user.email);
+    // console.log(tools);
     useEffect(() => {
         if (user) {
             fetch(`http://localhost:5000/booking?customer=${user.email}`, {
@@ -45,7 +45,14 @@ const MyOrder = () => {
                                 <td>{a.service}</td>
                                 <td>{a.price}</td>
                                 <td>{a.price}</td>
-                                <td><Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs btn-success'>Payment</button></Link> <button className='btn btn-xs red-500'>Cancel</button></td>
+                                <td>
+                                {(a.price && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs btn-success'>Payment</button><button className='btn btn-xs red-500'>Cancel</button></Link>}
+                                {(a.price && a.paid) && <div>
+                                <p><span className='text-success'>Paid</span></p>
+                                  <p>Transaction Id:<span className='text-success'>{ a.transactionId}</span></p>
+                                </div>}
+                              </td>
+                                
                                 
                             </tr>)
                         }

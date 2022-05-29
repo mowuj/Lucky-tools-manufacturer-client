@@ -1,7 +1,8 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
 
-const CheckoutForm = ({service}) => {
+const CheckoutForm = ({data}) => {
+  
     const stripe = useStripe();
     const elements = useElements();
   const [cardError, setCardError] = useState('');
@@ -9,7 +10,7 @@ const CheckoutForm = ({service}) => {
   const [processing, setProcessing] = useState(false);
   const [transactionId, setTransactionId] = useState('');
   const [clientSecret, setClientSecret] = useState('');
-  const {price,customer,customerName,_id } = service;
+  const {price,name,service,customer,customerName,_id } = data;
   useEffect(() => {
     fetch('http://localhost:5000/create-payment-intent', {
       method: 'POST',
@@ -69,7 +70,7 @@ const CheckoutForm = ({service}) => {
 
         //store payment
         const payment = {
-          service: _id,
+          appointment: _id,
           transactionId:paymentIntent.id
         }
         fetch(`http://localhost:5000/booking/${_id}`, {
@@ -105,7 +106,7 @@ const CheckoutForm = ({service}) => {
           },
         }}
       />
-      <button className='btn btn-success btn-sm mt-4' type="submit" disabled={!stripe}>
+      <button className='btn btn-success btn-sm mt-4' type="submit" disabled={!stripe||!clientSecret||success}>
         Pay
       </button>
             </form>

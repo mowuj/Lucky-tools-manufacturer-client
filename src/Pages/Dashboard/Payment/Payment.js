@@ -11,7 +11,7 @@ const stripePromise = loadStripe('pk_test_51L3uVdKsjvUBmvVjS6Lvi0Uz3OHWzCy9UYcj8
 const Payment = () => {
     const { id } = useParams();
     const url=`http://localhost:5000/booking/${id}`
-    const { data:service,isLoading } = useQuery(['booking', id], () => fetch(url, {
+    const { data,isLoading } = useQuery(['booking', id], () => fetch(url, {
         method: 'GET',
             headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -25,17 +25,17 @@ const Payment = () => {
             
         <div class="card w-50 max-w-md bg-base-100 shadow-xl my-12">
                 <div class="card-body">
-                    <p className="text-success font-bold">Hello,{ service.customerName}</p>
-                            <h2 class="card-title">Pay for :{ service.service}</h2>
+                    <p className="text-success font-bold">Hello,{ data.customerName}</p>
+                            <h2 class="card-title">Pay for :{ data.service}</h2>
                             
-                    <p>Please Pay :${ service.price}</p>
+                    <p>Please Pay :${ data.price}</p>
   </div>
 </div>
 {/* pk_test_51L3HzCFICgNuMVET4lm1alcn4VyaJfMWJm0ke7akqFag2hi9hvzX0ZHIYGh48uaHZh5f2T4dUVyA44XHPcBVwelS006dwqyc2O */}
         <div class="card flex-shrink-0 w-50 max-w-md shadow-2xl bg-base-100">
                 <div class="card-body">
             <Elements stripe={stripePromise}>
-                        <CheckoutForm service={ service}/>
+                        <CheckoutForm data={ data}/>
             </Elements>
         </div>
     </div>
