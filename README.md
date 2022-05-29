@@ -1,10 +1,29 @@
-# Getting Started with Create React App
+Lucky Tools Manufacturer server [Live server](https://agile-citadel-75234.herokuapp.com/).
+Lucky Tools Manufacturer live site [Live site](https://lucky-tools-manufacturer.web.app/).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Description
+* This is a Manufacturer system
+* Home page show a navbar banner service to other section and footer
+* service is a protected route and here details of all service and you can booking
+* perchase is a Protected route here you book your service
+* payment is also Protected route and here you can payment vai card
+* dash board has many nested route some route for users and some for admin
+* my order page show user order
+* add tools page only admin can add a tools
 
-## Available Scripts
-
+## Technology use in the project
+* React Route
+* React tailwind
+* daisy ui
+* React Icons
+* React Toastify
+* Firebase 
+* Firebase hooks
+* stripe
+*heroku server
+* mongodb database
 In the project directory, you can run:
+
 
 ### `npm start`
 

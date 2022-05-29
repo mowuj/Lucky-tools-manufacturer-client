@@ -34,6 +34,7 @@ const AddTools = () => {
             const service = {
               name: data.name,
               email: data.email,
+              price:data.price,
                 quantity: data.quantity,
                 Minimum_quantity: data.maxquantity,
               description:data.description,
@@ -153,6 +154,28 @@ const AddTools = () => {
   })}/>
     <label className="label">
         {errors.maxquantity?.type === 'required' && <span className="label-text-alt text-red-500">{errors.maxquantity.message}</span>}
+        
+
+
+  </label>
+</div>              
+    <div className="form-control w-full max-w-xs">
+  <label className="label">
+    <span className="label-text">Price</span>
+    
+  </label>
+  <input
+        type="text" 
+        placeholder="Maximum Quantity" 
+        className="input input-bordered w-full max-w-xs" 
+            {...register("price", {
+                required: {
+                    value: true,
+                    message:"quantity is Required"
+            }
+  })}/>
+    <label className="label">
+        {errors.price?.type === 'required' && <span className="label-text-alt text-red-500">{errors.price.message}</span>}
         
 
 
