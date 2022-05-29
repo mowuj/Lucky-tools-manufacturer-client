@@ -1,8 +1,8 @@
 import React from 'react';
-
+import { FaAccusoft } from 'react-icons/fa';
 const Summary = () => {
     return (
-      <div className='flex justify-center'>
+      <div className='flex justify-center my-8'>
         <div className="stats stats-vertical lg:stats-horizontal shadow">
   
           <div className="stat">

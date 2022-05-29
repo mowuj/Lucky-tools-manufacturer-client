@@ -2,9 +2,11 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import useTools from '../../../hooks/useTools';
 import Banner from '../Banner/Banner';
-import Carousel from '../Carousel/Carousel';
+
+import NewProduct from '../NewProduct/NewProduct';
 import Service from '../Service/Service';
 import Summary from '../Summary/Summary';
+import MostSels from './MostSels/MostSels';
 
 const Home = () => {
     const [services, setServices] = useTools();
@@ -18,9 +20,9 @@ const Home = () => {
     return (
         <div>
             
-            {/* <Carousel></Carousel> */}
+            
             <Banner></Banner>
-            <h4 className='text-xl text-secondary text-center'>Our Services </h4>
+            <h4 className='text-3xl text-secondary text-center mb-4'>Our Services </h4>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ml-12'>
                  {
                         services.slice(0, 3).map(service => <Service
@@ -32,7 +34,11 @@ const Home = () => {
             </div>
            
             <Summary></Summary>
-            
+            <NewProduct></NewProduct>
+            <div >
+                <h2 className='text-3xl text-secondary text-center'>Most sell Product of the Month</h2>
+                <MostSels></MostSels>
+            </div>
         </div>
     );
 };
