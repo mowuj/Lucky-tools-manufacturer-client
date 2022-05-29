@@ -1,6 +1,6 @@
 import React from 'react';
 import useTools from '../../../hooks/useTools';
-import ManageProductRow from './ManageProductRow/ManageProductRow';
+
 const ManageProduct = () => {
     const [products, setProducts] = useTools();
     console.log(products);

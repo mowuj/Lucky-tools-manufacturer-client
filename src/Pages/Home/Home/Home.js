@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import useTools from '../../../hooks/useTools';
+import Banner from '../Banner/Banner';
 import Carousel from '../Carousel/Carousel';
 import Service from '../Service/Service';
 import Summary from '../Summary/Summary';
@@ -17,7 +18,8 @@ const Home = () => {
     return (
         <div>
             
-            <Carousel></Carousel>
+            {/* <Carousel></Carousel> */}
+            <Banner></Banner>
             <h4 className='text-xl text-secondary text-center my-12'>Our Services </h4>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ml-12'>
                  {
