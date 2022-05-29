@@ -20,7 +20,7 @@ const Home = () => {
             
             {/* <Carousel></Carousel> */}
             <Banner></Banner>
-            <h4 className='text-xl text-secondary text-center my-12'>Our Services </h4>
+            <h4 className='text-xl text-secondary text-center'>Our Services </h4>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ml-12'>
                  {
                         services.slice(0, 3).map(service => <Service

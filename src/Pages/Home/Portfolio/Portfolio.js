@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import mowuj from '../../../images/mowuj.jpg'
 const Portfolio = () => {
     return (
@@ -11,12 +12,13 @@ const Portfolio = () => {
   <div class="card-body">
     <h2 class="card-title">Name:Md Ahsan Habib</h2>
     <p>Email:mowuj92@gmail.com</p>
-    <p>Ssc:4.38</p>
-    <p>Hsc:4.20</p>
-    <p>Hon's:3.23</p>
-                <p>Education:M.A</p>
-                <p>Result:3.30</p>
-    <p>Subject:Islamic History</p>
+    
+    <p>Education:M.A</p>
+          <p>Subject:Islamic History</p>
+          <h2 class="card-title">My Projects Link</h2>
+          <a href="https://fitness-studio-de1ce.web.app/">1. Fitness Studio</a>
+          <a href="https://chic-douhua-327480.netlify.app/">2. Laptop Analysis</a>
+          <a href="https://car-inventoy.web.app/">3. Car Inventory</a>
     
     
   </div>

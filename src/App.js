@@ -20,6 +20,7 @@ import Services from './Pages/Home/Services/Services';
 import Footer from './Pages/Shared/Footer/Footer';
 
 import Navbar from './Pages/Shared/Navbar/Navbar';
+import NotFound from './Pages/Shared/NotFound/NotFound';
 
 function App() {
   return (
@@ -28,12 +29,12 @@ function App() {
       
       <Routes>
         <Route path='/' element= {<Home></Home>}></Route>
-        <Route path='/service' element= {<Services></Services>}></Route>
+        <Route path='/service' element= {<RequireAuth><Services></Services></RequireAuth>}></Route>
         <Route path='/portfolio' element= {<Portfolio></Portfolio>}></Route>
         <Route path='/dashboard' element={<RequireAuth>
           <Dashboard></Dashboard>
         </RequireAuth>}>
-          <Route index element={<MyOrder></MyOrder>}></Route>
+          <Route index element={<RequireAuth><MyOrder></MyOrder></RequireAuth>}></Route>
           <Route path="review" element={<AddReview></AddReview>}></Route>
           <Route path="history" element={<MyProfile></MyProfile>}></Route>
           <Route path="payment/:id" element={<Payment></Payment>}></Route>
@@ -41,13 +42,15 @@ function App() {
           <Route path="addTools" element={<AddTools></AddTools>}></Route>
           <Route path="manage" element={<ManageProduct></ManageProduct>}></Route>
         </Route>
-        <Route path='/blogs' element={<RequireAuth>
+        <Route path='/blogs' element={
           <Blogs></Blogs>
-        </RequireAuth>}></Route>
+        }></Route>
         <Route path='/login' element= {<Login></Login>}></Route>
-        <Route path='/signup' element= {<SignUp></SignUp>}></Route>
+        <Route path='/signup' element={<SignUp></SignUp>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
+      
     </div>
   );
 }
