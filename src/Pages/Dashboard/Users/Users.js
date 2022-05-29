@@ -34,6 +34,7 @@ const Users = () => {
             key={user._id}
             user={user}
             refetch={refetch}
+            
         ></UserRow>)
         }
     </tbody>

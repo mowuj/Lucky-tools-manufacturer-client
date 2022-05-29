@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import useTools from '../../../hooks/useTools';
 import AllServices from '../AllServices/AllServices';
 import BookingModal from '../BookingModal/BookingModal';
-import Service from '../Service/Service';
+
 
 const Services = () => {
   const [services, setServices] = useTools();
